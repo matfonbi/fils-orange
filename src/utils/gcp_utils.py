@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 # Charger les variables d'environnement (.env)
 load_dotenv()
 
-PROJECT_ID = os.getenv("PROJECT_ID")
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "config/etl-service-account.json"
+#PROJECT_ID = os.getenv("PROJECT_ID")
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "config/etl-service-account.json"
 PROJECT_ID = "fils-orange"
 
 
@@ -51,3 +51,4 @@ def load_to_bigquery(dataset_id, table_id, gcs_uri):
     load_job = client.load_table_from_uri(gcs_uri, table_ref, job_config=job_config)
     load_job.result()
     print(f"✅ Données chargées dans BigQuery : {table_ref}")
+
