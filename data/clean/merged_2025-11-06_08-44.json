@@ -1,0 +1,17 @@
+[
+  {
+    "city":"Paris",
+    "timestamp":"2025-11-05T12:00:00.000Z",
+    "aqi":29,
+    "pm25":29,
+    "pm10":24,
+    "no2":23.6,
+    "o3":19.3,
+    "so2":0.6,
+    "co":0.1,
+    "temperature":17.8,
+    "windspeed":13.0,
+    "winddirection":134,
+    "weathercode":3
+  }
+]

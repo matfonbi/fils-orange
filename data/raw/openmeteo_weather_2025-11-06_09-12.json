@@ -1,0 +1,27 @@
+{
+  "latitude": 48.86,
+  "longitude": 2.3599997,
+  "generationtime_ms": 0.054001808166503906,
+  "utc_offset_seconds": 3600,
+  "timezone": "Europe/Paris",
+  "timezone_abbreviation": "GMT+1",
+  "elevation": 36.0,
+  "current_weather_units": {
+    "time": "iso8601",
+    "interval": "seconds",
+    "temperature": "°C",
+    "windspeed": "km/h",
+    "winddirection": "°",
+    "is_day": "",
+    "weathercode": "wmo code"
+  },
+  "current_weather": {
+    "time": "2025-11-06T10:00",
+    "interval": 900,
+    "temperature": 14.4,
+    "windspeed": 2.9,
+    "winddirection": 210,
+    "is_day": 1,
+    "weathercode": 3
+  }
+}

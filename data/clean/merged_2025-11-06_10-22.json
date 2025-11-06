@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp":"2025-11-06T10:00:00.000Z",
+    "pm25":12.0,
+    "pm10":14.8,
+    "co":335.0,
+    "no2":41.6,
+    "o3":14.0,
+    "so2":5.8,
+    "aqi_eu":21,
+    "temperature":14.4,
+    "windspeed":2.9,
+    "winddirection":210,
+    "weathercode":3
+  }
+]
