@@ -3,12 +3,14 @@ import json
 import requests
 from datetime import datetime
 from src.utils.gcp_utils import upload_to_gcs
+from datetime import date, timedelta
+
 
 # ---------- CONFIG ----------
 BUCKET_NAME = "etl-projet"
 LAT, LON = 48.8566, 2.3522  # Paris
 START_DATE = "2024-01-01"
-END_DATE = datetime.now().strftime("%Y-%m-%d")
+END_DATE = (date.today() - timedelta(days=1)).isoformat()
 RAW_FOLDER = "raw/"
 # ----------------------------
 

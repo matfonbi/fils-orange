@@ -2,3 +2,5 @@ google-cloud-storage
 google-cloud-bigquery 
 pandas 
 python-dotenv
+requests
+pyarrow

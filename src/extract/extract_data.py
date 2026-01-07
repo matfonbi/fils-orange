@@ -11,47 +11,31 @@ LAT, LON = 48.8566, 2.3522   # coordonnées de Paris
 RAW_FOLDER = "raw/"
 # ----------------------------
 
-from datetime import date, timedelta
 
 def fetch_openmeteo_air(lat, lon):
-    """Récupère les données de qualité de l'air pour la journée d'hier."""
-    # Calcul de la date d’hier
-    yesterday = date.today() - timedelta(days=1)
-    start_date = end_date = yesterday.isoformat()
-
+    """Récupère les données de qualité de l'air depuis Open-Meteo (temps réel)."""
     url = (
         "https://air-quality-api.open-meteo.com/v1/air-quality?"
         f"latitude={lat}&longitude={lon}"
-        f"&start_date={start_date}&end_date={end_date}"
-        "&daily=pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,ozone,sulphur_dioxide,european_aqi"
+        "&current=pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,ozone,sulphur_dioxide,european_aqi"
         "&timezone=Europe%2FParis"
     )
-
-    print(f"📡 Requête Open-Meteo (veille) : {url}")
     r = requests.get(url, timeout=30)
     r.raise_for_status()
     return r.json()
-
 
 
 def fetch_openmeteo_weather(lat, lon):
-    """Récupère la météo journalière de la veille."""
-    yesterday = date.today() - timedelta(days=1)
-    start_date = end_date = yesterday.isoformat()
-
+    """Récupère les données météo actuelles depuis Open-Meteo."""
     url = (
-        "https://archive-api.open-meteo.com/v1/archive?"
+        "https://api.open-meteo.com/v1/forecast?"
         f"latitude={lat}&longitude={lon}"
-        f"&start_date={start_date}&end_date={end_date}"
-        "&daily=temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_sum,windspeed_10m_mean"
-        "&timezone=Europe/Paris"
+        "&current_weather=true"
+        "&timezone=Europe%2FParis"
     )
-
-    print(f"📡 Requête Open-Meteo (météo veille) : {url}")
     r = requests.get(url, timeout=30)
     r.raise_for_status()
     return r.json()
-
 
 
 def save_local_and_upload(data, source):
@@ -93,4 +77,3 @@ def run_extract():
 
 if __name__ == "__main__":
     run_extract()
-

@@ -82,7 +82,7 @@ def save_and_upload(df):
     file_name = f"historical_2024_2025_{timestamp}.json"
     local_path = os.path.join(CLEAN_PATH, file_name)
 
-    df.to_json(local_path, orient="records", indent=2, date_format="iso")
+    df.to_json(local_path, orient="records", lines=True, date_format="iso")
     print(f"✅ Fichier nettoyé enregistré : {local_path}")
 
     gcs_path = f"clean/{file_name}"
